@@ -49,7 +49,8 @@ These results showcase the specific streets that police should be focusing their
 ## Question 2:
 How have the monthly counts of identity theft incidents between genders changed?
 
-<img width="475" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/7e0a250b-c19d-436d-9b81-cb8c327e0f3e">
+<img width="580" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/aa184506-c8a4-4237-8b33-48473035bef7">
+
 
 Importance: 
 
