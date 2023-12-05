@@ -8,7 +8,7 @@ Group 1
 - Josh Torres: 
 - Kenneth Johnson: 
 - McKenna Sloan: 
-- Thai Le: 
+- Thai Le: https://github.com/thai-tran-le/MIST4610-Project-2.git
 
 
 ## Dataset Description
