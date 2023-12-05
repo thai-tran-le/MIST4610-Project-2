@@ -1,56 +1,61 @@
+# MIST 4610 Project 2
+
 ## Team name and members:
 
+Group 1
+- Alvia Pham: 
+- Essex Glowaki: 
+- Josh Torres: 
+- Kenneth Johnson: 
+- McKenna Sloan: 
+- Thai Le: 
 
 
+## Dataset Description
+The dataset is sourced from incidents of crime in the City of Los Angeles dating back to 2020. The data is transcribed from original crime reports that are typed on paper.There are 847726 columns and 28 rows.
 
-- Charles McCollough - 811961114 - https://github.com/charlmc/CrashesProj2.git
-- Kaitlyn Schindler - 811910151 - https://github.com/KaitlynSchindler/CinncinatiAccidents
-- Amy Do - 811900843 - https://github.com/amydo21/CincinnatiCrashes
-- Lucas Sparger - 811580057 - https://github.com/lucassparger/Cincinatti-Car-Crashes
-- Aidan Daly - 811653166 - https://github.com/apd82722/CinciCarCrashes
+This dataset contains a range of information, each row represents a unique crime event. In this  dataset, the 'DR_NO' column is of integer data type, representing the report number for each crime incident. The 'Date Rptd,' 'DATE OCC' columns are of date/time data types, capturing the reporting date, date of occurrence, and 'TIME OCC' in integer to represent the number of occurrences of the crime. Geographic details are captured through 'AREA' (integer) and 'AREA NAME (string) representing the numeric code and name of the geographic area. Other columns include 'Crm Cd' (integer) and 'Crm Cd Desc' (string) providing a numeric code and description for the type of crime, and 'Vict Age,' (string) 'Vict Sex,' and 'Vict Descent,' both in integer describing the victim's age, gender, and descent. 
 
+“Premis Cd” (integer) and “Premis Desc” (string) describe the numeric code and name of the crime location type (condo, police station, etc). Various codes and descriptions are provided for weapon use, and the status of the crime report, such as “Weapon Used Cd” (integer), “Status” (string), “Status Desc” (string); and “Crm Cd 1”, “Crm Cd 2”, “Crm Cd 3”, “Crm Cd 4” all in integers. Crime address is described specifically with “LOCATION” and “Cross Street” both in strings. Additionally, 'LAT' and 'LON' columns both in floats offer precise latitude and longitude coordinates for each crime incident. 
 
-
-
-## Problem Description
-Our data set is related to the car accidents in Cincinnati from 2013 to 2020 and we were able to obtain this data on kaggle. The fields of the data set describe the time and date of the crash, type of accident, gender, injuries, conditions of the road, and context of the situation, along with other attributes. With the dimensions available we can analyze the correlation between many different dimensions and their correlation to crash statistics. 
+## Data Dictionary
+<img width="381" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/c1e8fef7-4d94-4188-a808-ab894b726c3a">
+<img width="380" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/6b0b4aad-3cc5-4bdc-aadb-cf24ac5ecef2">
 
 
+## Question 1
+Of the most prevalent types of crimes committed, where do a majority of them take place?
+
+<img width="479" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
+
+Importance: 
+The specific locations of crimes committed is extremely important for police to determine where to allocate their resources. For example, if they assigned the same number of police officers to each area within LA, some communities would be disproportionately patrolled. This would leave under-patrolled areas with too many crimes for their officers to respond to, which would result in a slow response rate, an inefficient use of police funds, and an increase in preventable crimes. However, if we can pinpoint the main locations where common crimes take place, these issues could be significantly reduced.
+
+Manipulations to dataset: 
+There were two main manipulations made to our dataset. First, the “Crm Cd Desc” (the description of the type of crime) had to be categorized into broader classifications. For example, this column contained descriptions like “Theft from Motor Vehicle,” “Theft from Person”, “Theft, Coin Machine,” etc. These slight differences were irrelevant to our initial calculation, so we created groups (such as “Theft”) in order to aggregate them together. The second manipulation we made was a calculated field, called “% Crm Cd Desc (group)”. This calculation was needed for the pie chart visualizations in order to determine the percentage of specific cases reported, as a proportion of the total cases reported. We calculated this by counting the number of unique IDs for each type of crime and dividing that amount by the total number of unique IDs for the dataset. The inputs for the calculation were: “COUNT([Dr No]) / TOTAL(COUNT([Dr No]))” and the outputs allowed us to determine how common each type of crime truly is.
+
+Analysis and Results: 
+We created four total charts to narrow down and eventually pinpoint the main location of the most common types of crime. First, we created a pie chart to determine that the most common type of crime committed was theft, which accounted for 48.89% of all crimes committed. Of the “Theft” crime type, there were many different sub-categories that had to be sorted through. Using a bar chart, we determined that the most common type of theft was stolen vehicles. Then, we created a symbol map to show the location where each vehicle was stolen. We determined that “77th Street'' was the area most prone to vehicle thefts, with “Newton” being a close second. Next, we used a piechart to conclude that 86.82% of vehicles stolen around “77th Street'' and “Newton” were stolen from a street (as opposed to a parking deck, driveway, etc.). Finally, we sorted these results by street name, which showed us that the three streets most prevalent to car thefts were “Broadway,” “Central Ave,” and “Main Street.” 
+
+These results showcase the specific streets that police should be focusing their efforts on. They should be allocating more of their resources to streets like “Broadway,” which has had 83 cars stolen since 2020, as opposed to “Woodlawn” or “West 84th” which have each only had 1 car theft in the same time span. This will allow police to respond to reports quicker, use their funds more efficiently, and keep these areas safer for their community members.
 
 
-## Models and Questions
+## Question 2:
+How have the monthly counts of identity theft incidents between genders changed?
+
+<img width="475" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/7e0a250b-c19d-436d-9b81-cb8c327e0f3e">
+
+Importance: 
+This question implies a focus on the comparative analysis of identity theft incidents affecting different genders over time, looking to uncover patterns, trends, or anomalies specific to each gender throughout a given period. In the advent of the pandemic, an acceleration of digital transition occurred. More services and financial activities were moved online, making scams and data breaches all the more abundant and sophisticated. By narrowing down the demographics for targets of these attacks, we can analyze trends to enable cybersecurity experts and policymakers at a governmental and corporate level to combat identity theft through reinforcing online safety protocols and potentially adjusting the legal framework for better victim assistance. Service providers and financial institutions can enhance their fraud detection systems to potentially reduce the incidences and impacts of these crimes. Overall, this question is a great start to highlighting the need for a tailored cybersecurity approach that addresses the unique challenges faced by different demographics.
+
+Manipulations to dataset: 
+One such manipulation we made to our data set was filtering out the month of November 2023 because it displayed a result that was outside the range of possibilities when taking the rest of the data set into account. We presumed that this outlier in the data set had to do with the fact that November was not yet finished at the time of our analysis. The second manipulation was to the Date Occ pill in the columns to show the month and the years with discrete values instead of continuous to present the data at their respective points in time more accurately.
+
+Analysis and Results: 
+The graph indicates a significant divergence in trends of identity theft cases between females and males from 2020 to 2023. The pink line, representing females shows a relatively stable trend in 2020, followed by a sharp increase in reported identity theft cases beginning in 2021. This surge peaks sharply, the drops just as rapidly, suggesting a temporary but intense vulnerability or a series of events that particularly affected females. In contrast, the blue line, representing males, maintains a relatively flat trend throughout the same period, indicating a steady rate of identity theft cases with not as dramatic peaks. The linear graph is the optimal choice for visualizing this data as it visually depicts a rate of change to add emphasis on the rapid growth of identity theft between the two groups. This is important for analysts and decision-makers to determine the magnitude and timing of the events and to uniform further investigation into potential causes and remedies for the disparities observed.
 
 
-![Screenshot 2023-04-26 120534](https://user-images.githubusercontent.com/91034834/235212924-72245481-8aeb-4bdc-b0c1-9dae1f316555.png)
-How many car accidents were reported in Cincinnati from 2013 to 2020 for each gender and age?
+## Dataset Used
+https://catalog.data.gov/dataset/crime-data-from-2020-to-present
 
-
-The data set assisted us in visualizing the answer by creating a bar chart and line graph. In the bar chart, we separated gender into two different charts with the same scale making them easy to compare. Each bar represents a different age group. In the line chart, we broke down the genders and added in a prediction of accidents in the future. The answer to this question could help an insurance company in Cincinnati decide on the cost of a plan for a young male or an older female driver. 
-![Screenshot 2023-04-28 130002](https://user-images.githubusercontent.com/91034834/235212948-5129acfb-a570-45dd-9459-22eee7162f35.png)
-How many crashes occur by zip code in Cincinnati?
-
-
-The second question answered using the data set was how many crashes occur by zip code in Cincinnati. We used the generated longitude and latitude to create a mapping of the Cincinnati area, along with providing the detail of the count of crashes. In doing this we were able to create a heat map of the crashes by zip code. This game is a great visualization of the density of crashes in Cincinnati. Looking at the map, we can see the higher density areas of Cincinnati due to the amount of crashes (The darker areas are the more populated parts of the city). From the bar graph we can see that 45202 is the zipcode with the highest number of crashes. Doing further research our team has discovered that 45202 zip code is the downtown part of Cincinnati which makes sense when looking at the heat map of the number of crashes. 
-
-
-
-
-## Manipulations
-Our group decided to exclude the year 2021 from our data set since it seemed to be an outlier that lacked a full year of data. In our line graph from question 1, it made the line decrease dramatically leading to inaccurate results about our set of data. In the same line graph, we also included a future prediction of accidents to get an accurate prediction of the number of car crashes in the following year.
-
-
-
-
-## Analysis and Results
-In our first question, we wanted to create visualizations to show the correlation and hopefully story behind the data. Our first question was talking about the relationship between the number of crashes and the gender of the driver. With the top-line graph in our dashboard, we could see the number of crashes by gender over a period of years. From this graph, we can see that men have a higher number of crashes and there seemed to be a peak in the graph around 2016 and 2017. In our second graph, we have a bar chart that shows the number of crashes by gender by age. This shows a unique view on the question because it brings the ages of the drivers into question as well. We can see from this graph that female drivers under the age of 25 have higher numbers of crashes compared to men. While men ages 31-40 have much more serious accidents than females in the same age category.
-
-
-
-
-
-
-After visualizing our data, there is a clear correlation between where in the city you are and the number of crashes that occur. What we have concluded is that the closer you are to the downtown area of Cincinnati, the more likely there are to be car crashes there. The downtown portion of Cincinnati, located in zip code 45202, is where more car crashes occur than anywhere else in the city. Home to many tourist attractions like Paycor Stadium, home of the Cincinnati Bengals, it makes sense for a majority of crashes to take place here rather than in a less densely populated area. Furthermore, zip codes surrounding downtown, like 45214, also tend to have a higher number of accidents than locations farther from downtown Cincinnati.
-
-
-
-
+<img width="473" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/3cb655b0-a0d1-4b60-a075-f4f8a866ab53">
