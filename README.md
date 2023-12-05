@@ -3,11 +3,11 @@
 ## Team name and members:
 
 Group 1
-- Alvia Pham: 
-- Essex Glowaki: 
-- Josh Torres: 
-- Kenneth Johnson: 
-- McKenna Sloan: 
+- Alvia Pham: https://github.com/chaaugiang/MIST-4610-project-2.git
+- Essex Glowaki: https://github.com/essexglowaki/MIST-4610-Project-2.git
+- Josh Torres: https://github.com/JoshTorres01/MIST-4610-Project-2.git
+- Kenneth Johnson: https://github.com/Knny-MJ/MIST-4610-Project-2.git
+- McKenna Sloan: https://github.com/mckennasloan24/MIST4610-Project-2.git
 - Thai Le: https://github.com/thai-tran-le/MIST4610-Project-2.git
 
 
