@@ -28,7 +28,7 @@ Of the most prevalent types of crimes committed, where do a majority of them tak
 
 <img width="479" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
-Importance: 
+# Importance: 
 The specific locations of crimes committed is extremely important for police to determine where to allocate their resources. For example, if they assigned the same number of police officers to each area within LA, some communities would be disproportionately patrolled. This would leave under-patrolled areas with too many crimes for their officers to respond to, which would result in a slow response rate, an inefficient use of police funds, and an increase in preventable crimes. However, if we can pinpoint the main locations where common crimes take place, these issues could be significantly reduced.
 
 Manipulations to dataset: 
